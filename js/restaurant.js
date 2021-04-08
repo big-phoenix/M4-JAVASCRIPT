@@ -78,11 +78,21 @@ function cuenta(){
 
     for(i=0;i<pedido.length;i++){ // recoremos y verficamos si concide el pedido con el menu
 
-        if(menu.has(pedido[i])){
+        try{
+
+            if(menu.has(pedido[i])){
+                total += menu.get(pedido[i]);
+            }
+
+        }catch (err){
+            console.error(err);
+        }
+        
+        /*if(menu.has(pedido[i])){
             total += menu.get(pedido[i]);
         } else{
             alert("No exite el Plato");
-        }
+        }*/
 
     }
 
